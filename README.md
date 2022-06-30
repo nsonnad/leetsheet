@@ -1,6 +1,8 @@
 # leetsheet
 
-`leetsheet` is a file format spec for capturing in plain-text all the elements needed to describe the chords, rhythm, and structure of a song. i.e., for creating a lead sheet or chord chart.
+`leetsheet` is a file format spec for capturing in plain-text all the elements
+needed to describe the chords, rhythm, and structure of a song. i.e., for
+creating a [lead sheet](https://en.wikipedia.org/wiki/Lead_sheet) or [chord chart](https://en.wikipedia.org/wiki/Chord_chart).
 
 `leetsheet` is nothing more than a set of rules for how to describe a song in plain-text. as such it can by itself be used to document entire songs, but using tools like `leetsheet-parser`, you can also turn a `leetsheet` into a data structure that makes it easy to do other things with, like convert to midi or have a computer play your song.
 
@@ -69,7 +71,7 @@ a `progression` is built like this:
 a chord can be described to span multiple measures using square brackets, like
   so: `| Bb7[3] |`, which says to repeat `Bb7` for three measures
 
-by using parenthesis, you can specify the duration (note value) of a given
+by using parenthesis, you can specify the duration ([note value](https://en.wikipedia.org/wiki/Note_value)) of a given
   chord. for example:
 
   `| Em7(2) Am7(4) Dm7(8) G7(8) | Cmaj7(1) |`
