@@ -99,3 +99,9 @@ dd8 : double dotted eighth
 64 : sixty-fourth
 Tn : where n is an explicit number of ticks (T128 = 1 beat)
 ```
+
+## conclusion and examples
+
+that's it! using just the specifications described here, you can represent virtually any song's chord progressions and overall structure. `leetsheet` is useful as a songwriting tool, as well, making it easy to rearrange a song's structure, quickly add an additional verse, add a variation to the end of a section, and so on.
+
+if you want to see some `leetsheet`s in action, check out the [examples]()
