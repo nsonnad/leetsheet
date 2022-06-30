@@ -64,7 +64,7 @@ a `progression` is built like this:
 - each area within `| |` equals one measure of musical time, where the number of beats is defined by `time` as declared in the frontmatter
 - a chord's quality is written using any of the number of conventions supported by [tonal.js](https://github.com/tonaljs/tonal/blob/main/packages/chord-type/data.ts). a `-` in place of a chord represents a rest
 
-#### rhythm and subdivision
+### rhythm and subdivision
 
 a chord can be described to span multiple measures using square brackets, like
   so: `| Bb7[3] |`, which says to repeat `Bb7` for three measures
