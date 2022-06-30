@@ -12,7 +12,7 @@ a `leetsheet` contains three elements:
 2. the song's structure
 3. the individual sections that make up the structure
 
-like so:
+here's an example:
 
 ```md
 ---
@@ -50,3 +50,26 @@ time: "4/4"
 
 | Eb | Bb | Gm7 | F | F7 |
 ```
+
+1. `frontmatter` contains top-level facts about the song
+2. `structure` contains an array of `[ section, repetitions ]` that describes the order in which to play the sections of the song, and how many time to repeat them. the song is played from top to bottom, through the structure
+3. `sections` contains any number of user-defined, uniquely named sections containting `progressions`, i.e. chord progressions
+
+## progressions
+
+`progressions` are the most intricate part of `leetsheet`, but aim to be a simple way of declaring the rhythmic and harmonic elements of a song. (note that `leetsheet` is not interested in having a way to represent melodies or lyrics; in my mind the best tool for this job by far is good old sheet music.)
+
+a `progression` is built like this:
+
+- each area within `| |` equals one measure of musical time, where the number of beats is defined by `time` as declared in the frontmatter
+- a chord's quality is written using any of the number of conventions supported by [tonal.js](https://github.com/tonaljs/tonal/blob/main/packages/chord-type/data.ts)
+- a chord can be described to span multiple measures using square brackets, like
+  so: `| Bb7[3] |`, which says to repeat `Bb7` for three measures
+- by using parenthesis, you can specify the duration (note value) of a given
+  chord. for example:
+
+  `| Em7(2) Am7(4) Dm7(8) G7(8) | Cmaj7(1) |`
+
+  defines a measure that contains a half note of `Em7`, a quarter note of `Am7`,
+  and two eighth notes each of `Dm7` then `G7`, and finally a resolving whole
+  note of `Cmaj7`. (putting no number next to the chord is the same as `(1)`)
