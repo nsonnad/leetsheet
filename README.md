@@ -44,7 +44,7 @@ time: "4/4"
 
 - prechorus
 
-| Bb(8) -(14) |
+| Bb(8) - |
 
 - chorus
 
@@ -62,10 +62,14 @@ time: "4/4"
 a `progression` is built like this:
 
 - each area within `| |` equals one measure of musical time, where the number of beats is defined by `time` as declared in the frontmatter
-- a chord's quality is written using any of the number of conventions supported by [tonal.js](https://github.com/tonaljs/tonal/blob/main/packages/chord-type/data.ts)
-- a chord can be described to span multiple measures using square brackets, like
+- a chord's quality is written using any of the number of conventions supported by [tonal.js](https://github.com/tonaljs/tonal/blob/main/packages/chord-type/data.ts). a `-` in place of a chord represents a rest
+
+### rhythm
+
+a chord can be described to span multiple measures using square brackets, like
   so: `| Bb7[3] |`, which says to repeat `Bb7` for three measures
-- by using parenthesis, you can specify the duration (note value) of a given
+
+by using parenthesis, you can specify the duration (note value) of a given
   chord. for example:
 
   `| Em7(2) Am7(4) Dm7(8) G7(8) | Cmaj7(1) |`
