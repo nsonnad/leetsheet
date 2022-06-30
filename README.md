@@ -53,7 +53,7 @@ time: "4/4"
 
 1. `frontmatter` contains top-level facts about the song
 2. `structure` contains an array of `[ section, repetitions ]` that describes the order in which to play the sections of the song, and how many time to repeat them. the song is played from top to bottom, through the structure
-3. `sections` contains any number of user-defined, uniquely named sections containting `progressions`, i.e. chord progressions
+3. `sections` contains any number of user-defined, uniquely named sections each containting a `progression`, i.e. chord progression
 
 ## progressions
 
