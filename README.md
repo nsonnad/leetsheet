@@ -73,3 +73,25 @@ a `progression` is built like this:
   defines a measure that contains a half note of `Em7`, a quarter note of `Am7`,
   and two eighth notes each of `Dm7` then `G7`, and finally a resolving whole
   note of `Cmaj7`. (putting no number next to the chord is the same as `(1)`)
+
+the following durations are available (taken from [midiwriterjs](https://grimmdude.com/MidiWriterJS/docs/)):
+
+```
+1 : whole
+2 : half
+d2 : dotted half
+dd2 : double dotted half
+4 : quarter
+4t : quarter triplet
+d4 : dotted quarter
+dd4 : double dotted quarter
+8 : eighth
+8t : eighth triplet
+d8 : dotted eighth
+dd8 : double dotted eighth
+16 : sixteenth
+16t : sixteenth triplet
+32 : thirty-second
+64 : sixty-fourth
+Tn : where n is an explicit number of ticks (T128 = 1 beat)
+```
