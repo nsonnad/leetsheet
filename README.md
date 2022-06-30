@@ -74,9 +74,9 @@ by using parenthesis, you can specify the duration (note value) of a given
 
   `| Em7(2) Am7(4) Dm7(8) G7(8) | Cmaj7(1) |`
 
-  defines a measure that contains a half note of `Em7`, a quarter note of `Am7`,
-  and two eighth notes each of `Dm7` then `G7`, and finally a resolving whole
-  note of `Cmaj7`. (putting no number next to the chord is the same as `(1)`)
+defines a measure that contains a half note of `Em7`, a quarter note of `Am7`,
+and two eighth notes each of `Dm7` then `G7`, and finally a resolving whole
+note of `Cmaj7`.
 
 the following durations are available (taken from [midiwriterjs](https://grimmdude.com/MidiWriterJS/docs/)):
 
@@ -99,6 +99,50 @@ dd8 : double dotted eighth
 64 : sixty-fourth
 Tn : where n is an explicit number of ticks (T128 = 1 beat)
 ```
+
+if no duration is given for a chord, it will fill the remaining space in the
+measure and divide it up amongst any other chords for which no duration was given. for example, in 4/4 time, the following two declarations are equivalent:
+
+```txt
+| Em7(4) Am7(4) Dm7(4) G7(4) | Cmaj7(1) |
+
+// is equivalent to
+
+| Em7 Am7 Dm7 G7 | Cmaj7 |
+```
+
+and as in the Purple Rain example above, we play a `Bb` for one eighth note, and
+then nothing (`-` for rest) for the remainder of the measure:
+
+```
+| Bb(8) - |
+```
+
+which is equivalent to
+
+```
+| Bb -(dd2) |
+```
+
+the math of this is simply to subtract the given values from the total for
+a measure, and then divide by what's left. so declaring this in 4/4 time:
+
+```
+| Em7 Am7(8) Dm7(8) G7 |
+```
+
+will result in:
+
+```
+| Em7(d4) Am7(8) Dm7(8) G7(d4) |
+```
+
+because:
+1. an eighth note is half of a beat
+2. we have two eighth notes = 1 beat
+3. beats per measure - 1 beat = 3 beats
+4. 3 beats / 2 undeclared chords = 1.5 beats
+5. 1.5 beats is a `d4`, dotted quarter note
 
 ## conclusion and examples
 
